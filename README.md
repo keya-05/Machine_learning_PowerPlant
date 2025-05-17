@@ -69,3 +69,6 @@ Key Steps
 - Adding cross-validation for better generalization
 
 ---
+Run Live on:
+
+https://hub.gesis.mybinder.org/user/keya-05-machine-ning_powerplant-3kq5f0e6/notebooks/PowerPlant_Regression.ipynb
