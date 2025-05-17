@@ -1,13 +1,71 @@
-In this project we are creating a modeling process to develop a machine learning model to solve a simple problem. 
-We are provided a small dataset and the task will be to perform the basic steps of the modeling process to train and evaluate a machine learning model on the dataset.  
+Power Plant Energy Output Prediction
 
-In this project we will build a model to predict the electrical energy output of a Combined Cycle Power Plant, 
-which uses a combination of gas turbines, steam turbines, and heat recovery steam generators to generate power. 
-We have a set of 9568 hourly average ambient environmental readings from sensors at the power plant which we will use in our model.
+This project uses machine learning regression models to predict the net electrical energy output of a power plant based on several environmental factors. It applies data preprocessing, exploratory data analysis (EDA), and various regression models to evaluate and compare performance.
 
-The columns in the data consist of hourly average ambient variables:
-- Temperature (T) in the range 1.81°C to 37.11°C,
-- Ambient Pressure (AP) in the range 992.89-1033.30 milibar,
-- Relative Humidity (RH) in the range 25.56% to 100.16%
-- Exhaust Vacuum (V) in the range 25.36-81.56 cm Hg
-- Net hourly electrical energy output (PE) 420.26-495.76 MW (Target we are trying to predict)
+Dataset
+
+The dataset is from the UCI Machine Learning Repository:  
+Combined Cycle Power Plant (CCPP) 
+It contains 9,568 data points collected from a power plant over 6 years.
+
+Features:
+- Ambient Temperature (°C)
+- Ambient Pressure (millibar)
+- Relative Humidity (%)
+- Exhaust Vacuum (cm Hg)
+
+Target:
+- Net hourly electrical energy output (PE) in MW
+
+---
+
+Tools & Technologies
+
+- Python
+- Pandas & NumPy
+- Scikit-learn
+- Matplotlib & Seaborn
+
+---
+
+Key Steps
+
+1. Data Cleaning and Preprocessing
+   - Checked for null values
+   - Scaled features using StandardScaler
+
+2. Exploratory Data Analysis
+   - Correlation heatmaps
+   - Pair plots for visualizing relationships
+
+3. Model Training
+   - Linear Regression
+   - Random Forest Regressor
+   - Decision Tree Regressor
+   - Compared using R² score and RMSE
+
+4. Model Evaluation
+   - Chose the best model based on testing accuracy
+   - Visualized actual vs predicted output
+
+---
+
+ Results
+
+| Model                 | R² Score | RMSE |
+|----------------------|----------|------|
+| Linear Regression     | 0.93     | ~4.5 |
+| Random Forest Regressor | 0.96  | ~3.0 |
+| Decision Tree Regressor | 0.94  | ~3.7 |
+
+>  Random Forest gave the best results among all tested models.
+
+---
+
+ Future Improvements
+
+- Hyperparameter tuning using GridSearchCV
+- Deploying the model using Streamlit for live prediction
+- Adding cross-validation for better generalization
+
+---
